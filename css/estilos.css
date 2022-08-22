@@ -1,0 +1,804 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap'); /*importas la tipografia raleway de google*/
+
+:root{ /* inicializacion de variables*/
+    --background: linear-gradient(135deg, /*135deg debe ir junto, si no no funciona*/ #667eea7e 0%, #764ba298 100%); /* 7e representa el valor alfa del color, da transparencia al gradiente*/
+    --color-primary: #667eea;
+    --color-secondary: #10274a;
+    --boton-padding: 20px 40px;
+}
+
+body{
+    font-family: 'Raleway', sans-serif;
+}
+
+.contenedor{
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden; /*todo lo que salga del contenedor se escondera, no sera visible*/
+    padding: 80px 0;
+    max-width: 1200px;
+}
+
+.subtitulo{
+    color: var(--color-primary); /* uso de la variable que esta en root*/
+    font-size: 2.5rem;
+    margin-bottom: 35px;
+}
+
+/*.fullscreen-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+}*/
+
+/*.hero{
+    height: 100vh;
+    background-image: var(--background), url('../assets/cucea6.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+}*/
+
+/*PARAMETROS DEL VIDEO PRINCIPAL*/
+.fullscreen-bg__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    object-fit: cover; /*acopla el video con la wave*/
+}
+
+
+
+.hero .contenedor{
+    padding: 0;
+}
+
+/*MENU NAVEGACION Y FOOTER*/
+.encabezado__imagen{
+    width: 50%; /*se pone pixeles para que se vea como un circulo*/
+    min-width: 50%;
+    height: 50%; /*va de la mano con width, deben ir iguales para que sea simetrico*/
+    object-fit: cover; /* no pierde calidad la imagen*/
+    object-position: top; /*centra la imagen desde arriba*/
+    margin-right: 30px;
+    padding-top: 50px;
+}
+
+.nav{
+    display: flex;
+    justify-content:space-between; /*todos los elemnetos iran al final del contenedor*/
+    height: 70px;
+    align-items: center;
+    font-weight: 700;
+}
+
+.nav--footer{
+    font-weight: 300;
+    justify-content: flex-start; /*lo mismo que flex end, solo que iran al inicio del contenedor*/
+}
+
+.nav__objetos{
+    color: #fff;
+    text-decoration: none;
+    margin-right: 15px;
+    padding: 10px 15px;
+    font-weight: inherit /* hereda los parametros de la fuente del padre*/
+    
+}
+
+.nav__objetos:hover,/*plantilla*/
+.nav__objetos--cta:focus{
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+    -webkit-transform: translateY(-0.25em);
+          transform: translateY(-0.25em);
+          color: var(--color);
+    -webkit-transition: 0.25s;
+  transition: 0.25s;
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+  border-color: var(--hover);
+  color: #fff; /*cambia el color de letra*/
+  --hover: #009910; /*cambia el color al posicionarse en el boton*/
+}
+
+.nav__objetos--cta:hover,/*plantilla*/
+.nav__objetos--cta:focus{
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+    -webkit-transform: translateY(-0.25em);
+          transform: translateY(-0.25em);
+          color: var(--color);
+    -webkit-transition: 0.25s;
+  transition: 0.25s;
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+  border-color: var(--hover);
+  color: #fff; /*cambia el color de letra*/
+  --hover:var(--color-primary) /*cambia el color al posicionarse en el boton*/
+}
+
+.nav__objetos--footer{
+    padding: 10px;
+}
+
+.hero__contenedor{
+    display: flex;
+    height: calc(100vh - 70px);
+    align-items: center;
+    color: #fff;
+}
+
+/*TEXTOS*/
+.hero__textos{
+    width: 80%;
+    margin-bottom: 50px;
+}
+
+.hero__titulo{
+    font-size: 3.2rem;
+    color: #ffffff;
+}
+
+.principal{
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.secundario{
+    margin-bottom: 50px;
+    margin-top: -20px;
+}
+
+.hero__subtitulo{
+    font-size: 2rem;
+    font-weight: 300;
+    margin: 15px 0;
+    color: #ffffff;
+}
+
+.hero__cta{
+    display: inline-block;
+    background: #fff;
+    padding: var(--boton-padding);
+    color: var(--color-primary);
+    text-decoration: none;
+    border-radius: 40px;
+}
+
+.hero__cta{ /*plantilla*/
+    color: #000000;
+  background: transparent;
+  border: 3px solid #10274a;
+  border-radius: 5px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+  text-align: center;
+}
+
+.hero__cta:hover{ /*plantilla*/
+    background: #ffffff;
+  color: #000000;
+  border: 3px solid #ff0000;
+   -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+
+.hero__cta:hover >a{ /*plantilla*/
+    color: #ffffff;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+  text-align: center;
+}
+
+.hero__cta:active{ /*plantilla*/
+    -webkit-transform: translate(5px, 5px);
+  transform: translate(5px, 5px);
+}
+
+.hero__wave{
+    position: absolute;
+    bottom: 0; /*la ola se posiciona abajo de la imagen*/
+    left:  0; /*se pasa a la izquierda*/
+    width: 100%;
+    height: 100px;
+}
+
+/*seccion indicadores*/
+
+.proyectos{
+   background: #f2f2f2;
+}
+
+.proyectos__grid{
+    display: grid;
+    height: 550px;
+    grid-template-areas: 
+    "img1 img1 img2 img3"
+    "img1 img1 img4 img5"; /*se declaran dos filas con cuatro columnas cada una y se define que elemento ira en cada columna*/
+    gap: 15px; /*genera espacio entre las imagenes*/
+}
+
+.proyectos__objeto{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    box-shadow: 4px 4px 4px black;
+}
+
+/*seccion videos indicadores*/
+
+.indicador__video{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.indicador_internet{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+
+.proyectos__imagen{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /*cursor: pointer;*/
+}
+
+.proyectos__objeto:nth-of-type(1){ /*el primer elemento que encuentre del mismo tipo le dara este parametro, toma dos lugares del area*/
+    grid-area: img1;
+}
+
+.proyectos__objeto:nth-of-type(2){  /*se copia dependiendo las imagenes que se tengan y el no. de columnas*/
+    grid-area: img2;
+}
+
+.proyectos__objeto:nth-of-type(3){ 
+    grid-area: img3;
+}
+
+.proyectos__objeto:nth-of-type(4){ 
+    grid-area: img4;
+}
+
+.proyectos__objeto:nth-of-type(5){ 
+    grid-area: img5;
+}
+.proyectos__hover{
+    position: absolute; /*se posicionara en su clase padre, que viene siendo la de proyectos*/
+    background: #dc143c8c; /*le da color al hover de los proyectos*/
+    top: 0;
+    left: 0; /*top y left haran que se ponga a la esquina superior izquierda*/
+    width: 100%;
+    height: 100%;
+    color: #fff; /*color del texto*/
+    text-align: center;
+    display: flex;
+    flex-direction: column; /*centra los elemntos en columna, verticalmente*/
+    justify-content: center; /*centra los elementos al centro*/
+    transform: translateX(100%); /*oculta el fondo rojo para posteriormente hacerle el efecto de animacion*/
+    /*cursor: pointer;*/
+    transition: transform .3s ease-in-out; /*ponemos la transicion para que se vea el efecto, solo afecta a las clases que tengan transform*/
+}
+
+.proyectos__objeto:hover .proyectos__hover{
+    transform: translateX(0%);
+
+}
+
+.proyectos__icono{ /*agranda el icono y le da margen*/
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+.proyectos__titulo{ /*formato para los titulos de los proyectos en el hover*/
+    font-size: 2.1rem;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+/*seccion acerca Y CSD*/
+
+.presentacion{
+    padding-top: 0;
+    text-align: center;
+}
+
+.presentacion__foto{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /*redondea los lados de la imagen*/
+    margin-bottom: 10px;
+    object-fit: cover; /* hace que las imagenes no pierdan resolucion*/
+    /*object-position: top;  posible quitar*/
+}
+
+.presentacion__copia{ /*centra el texto*/
+    width: 80%;
+    margin: 0 auto;
+}
+
+.presentacion__cta{
+    display: inline-block; /*se debe poner esto, ya que elemento a es un elemento en linea, si no no se aplican cambios*/
+    margin-top: 30px;
+    background: var(--color-secondary);
+    color: #fff;
+    text-decoration: none;
+    padding: var(--boton-padding);
+    border-radius: 40px;
+}
+
+/*SECCION ACERCA*/
+.acerca{
+    min-height: 400px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 80px;
+    justify-items: center; /* para centrar todo vertical y horizontalmente*/
+    align-items: center; /* para centrar todo vertical y horizontalmente*/
+}
+
+.acerca__img{
+    text-align: center;
+}
+
+.acerca__img--left{
+    text-align: left;
+}
+
+.acerca__foto{
+    max-width: 95%; /*manipula el tamaño de la imagen del smart campus propuestas*/
+    object-fit: cover;
+}
+
+.acerca__parrafo{
+    margin-bottom: 20px;
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+/*SECCION MARCOS NORMATIVOS Y COMPONENTES REUTILIZABLES*/
+.marcos{
+    background: #ffffff;
+}
+
+.descripcion{
+    padding: 50px;
+    margin-bottom: -20px;
+}
+
+.nombre{
+    padding: 50px;
+    margin-bottom: -50px;
+}
+
+.container{
+    width: 90%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3em;
+    margin-bottom: 3em;
+    
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+  }
+
+  .enlace{
+      text-decoration: none;
+      color: #000000;
+  }
+  
+  
+  .item{
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,.095);
+    
+    transition: all 300ms;
+    
+    position: relative;
+  }
+  
+  
+  .item::after {
+    content: "";
+    background-color: rgba(0, 26, 255, 0.1);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    transform: scale(0);
+    transition: all 300ms;
+    opacity: 0;
+  }
+  
+  .item:hover:after{
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .item:hover {
+    transform: scale(1.05);
+  }
+  
+  .item-text{
+    padding: 1em;
+  }
+  
+  
+  .item-img{
+    max-width: 100%;
+    display: block;
+  }
+
+  @media screen and (min-width: 590px) {
+    
+    .container{
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+  }
+  
+  
+  
+  @media screen and (min-width: 960px) {
+    
+    .container{
+      grid-template-columns: repeat(3, 1fr);
+    }
+    
+  }
+  
+  
+  @media screen and (max-width: 800px) {
+    
+    .container{
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+  }
+  
+  
+  
+  @media screen and (max-width: 500px) {
+    
+    .container{
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+  }
+
+/*seccion buenas practicas*/
+.practicas{
+    background: #f2f2f2;
+}
+
+.imagen_practicas{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+/*seccion de testimonios*/
+
+.testimonio__grid{
+    width: 100%; /*abarca todo el contenedor*/
+    display: grid;
+    grid-template-columns: 1fr 1fr; /*se agregan dos columnas, se ven desde la consola*/
+    gap: 30px; /*espacio entre columnas*/
+}
+
+.testimonio__objeto{
+    width: 95%; /*ocupara el 95% de la fraccion/columna*/
+    margin: 0 auto;
+    background: var(--color-secondary);
+    box-shadow: 0 8px 10px rgba(66, 66, 66, .5); /*box shadow 0 en X, 10px en Y y 10px de profundidad*/
+    border-radius: 7px; /*redondear el elemento 7 pixeles*/
+    padding: 30px 25px; /*30px arriba y abajo y 25px hacia los lados*/
+    color: #fff;/*lo heredaran los textos*/
+    margin-bottom: 50px;
+}
+
+.testimonio__persona{
+    display: flex;
+    align-items: center; /*centrar verticalmente*/
+    margin-bottom: 20px;
+}
+
+.testimonio__imagen{
+    width: 100px; /*se pone pixeles para que se vea como un circulo*/
+    min-width: 100px;
+    height: 100px; /*va de la mano con width, deben ir iguales para que sea simetrico*/
+    object-fit: cover; /* no pierde calidad la imagen*/
+    object-position: top; /*centra la imagen desde arriba*/
+    border-radius: 50%;
+    border: 3px solid #fff;
+    margin-right: 30px;
+}
+
+.testimonio__nombre{
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.testimonio__verificacion{
+    color: #e0afa0;
+    font-weight: 700; /*aumenta el tono de las negritas*/
+}
+
+.testimonio__reseña{
+    font-weight: 300;
+}
+
+/*footer*/
+
+.footer{
+    background: var(--color-secondary);
+}
+
+.footer__grid{
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 20px;
+    align-items: center;
+}
+
+.footer__titulo{
+    font-weight: 400;
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.footer__imagen{
+    width: 100%; /*se pone pixeles para que se vea como un circulo*/
+    min-width: 100%;
+    height: 100%; /*va de la mano con width, deben ir iguales para que sea simetrico*/
+    object-fit: cover; /* no pierde calidad la imagen*/
+    object-position: top; /*centra la imagen desde arriba*/
+    margin-right: 30px;
+}
+
+.footer__iconos{
+    display: flex;
+    justify-content: space-between; /*los iconos se distribuyen equitativamente*/
+}
+
+.footer__contenedor-iconos{
+    display: inline-block; /*porque donde estan los iconos en el html son span, los cuales son elementos en linea*/
+    width: 60px;
+    height: 60px;
+    color: #fff;
+    text-align: center;
+    border: 1px solid #fff;
+    border-radius: 50% ; /*redondea los elementos*/
+}
+
+/*.footer__icono{
+    color: inherit; /*color heredado de la clase padre(el blanco)
+    font-size: 30px;
+    text-decoration: none;
+
+}*/
+
+/*.fab.footer__icono{ clase fab es la clase padre de footer__iconos
+    line-height: 60px; /*centra los elementos, debe tener el mismo heigth del padre(contenedor__iconos)
+
+}*/
+
+/*diseño responsivo*/
+@media screen and (max-width: 800px){
+    :root{
+        --boton-padding: 18px 40px;
+    }
+
+    .nav{
+        justify-content: space-around;
+
+    }
+
+    .nav__objetos--cta{
+        border: none;        
+    }
+
+    .nav__objetos{
+        font-weight: 400;
+        border-bottom: 1px solid #fff;
+        margin-right: 0;
+    }
+
+    .nav__objetos--footer{
+        border: none;
+    }
+
+    .hero__textos{
+        width: 100%;
+        margin-bottom: 80px;
+    }
+
+    .hero__titulo{
+        font-size: 2.5rem;
+    }
+
+    .hero__subtitulo{
+        font-size: 1.5rem;
+    }
+
+    .principal{
+        width: 100%;
+        margin-bottom: 80px;
+        font-size: 1.5rem;
+    }
+
+    /*columnas grid acerca o pais mayor acceso*/
+    .presentacion__copia{
+        width: 100%;
+    }
+
+    .acerca{
+        grid-template-columns: 1fr;
+    }
+
+    .acerca.contenedor{
+        padding-top: 30px;
+    }
+
+    .acerca__img--left{
+        text-align: center;
+    }
+
+    .acerca__parrafo:last-child{
+        grid-row: 3/4;
+    }
+
+    /*proyectos / indicadores*/
+    .proyectos__grid{
+        grid-template-areas: 
+        "img1 img1 img2 img2"
+        "img1 img1 img3 img3"
+        "img4 img4 img5 img5";
+    }
+
+    /*buenas practicas*/
+
+    .principal{
+        text-align: center;
+    }
+
+    /*representantes*/
+
+    .testimonio__grid{
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    /*footer*/
+
+    .footer__grid{
+        grid-template-columns: 1fr;
+    }
+
+    .footer__contacto{
+        grid-row: 1/2;
+    }
+
+}
+
+@media screen and (max-width: 500px){
+    :root{
+        --boton-padding: 18px 35px;
+    }
+
+    .subtitulo{
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .nav{
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-top: 10px;
+        padding: 0 10px;
+    }
+
+    .nav__objetos{
+        padding: 0 10px;
+        border: 0;
+    }
+
+    .hero__textos{
+        text-align: center;
+        margin-bottom: 100px;
+    }
+
+    .hero__titulo{
+        font-size: 2rem;
+    }
+
+    /*columnas grid acerca o pais mayor acceso*/
+    .presentacion__foto{
+        width: 120px;
+        height: 120px;
+    }
+
+    .acerca{
+        row-gap: 60px;
+    }
+
+    .acerca.contenedor{
+        padding-top: 10px;
+    }
+
+    /*proyectos indicadores*/
+    .proyectos__grid{
+        grid-template-areas: 
+        "img1"
+        "img2"
+        "img3"
+        "img4"
+        "img5";
+        height: auto;
+        grid-template-rows: repeat(5, 250px);
+        /*grid-auto-rows: 250px;*/
+        gap: 10px;
+    }
+
+    /*buenas practicas*/
+    .principal{
+        text-align: center;
+    }
+
+    .imagen_practicas{
+        width: 100%;
+        height: 100%;
+    }
+
+    /*representantes*/
+    .testimonio__objeto{
+        padding: 30px 15px;
+    }
+
+    .testimonio__persona{
+        flex-direction: column;
+    }
+
+    .testimonio__reseña{
+        text-align: center;
+    }
+
+    .testimonio__imagen{
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    /*footer*/
+
+}
+
